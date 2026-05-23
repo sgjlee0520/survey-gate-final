@@ -9,10 +9,6 @@ window.SOLUTIONS_CONFIG = {
   // Required query param: ?k=<accessToken>
   accessToken: "phys23-may25",
 
-  // Passphrase announced in class / on Canvas at unlock time
-  passphrase: "gauss2026",
-  authStorageKey: "phys23-final-solutions-auth",
-
   // Obscure PDF path — file is added to main by GitHub Actions at unlock time
   pdfPath: "assets/7c4e2a-keys.pdf",
   pdfLabel: "Download Practice Final Part 1 Keys",
