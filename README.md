@@ -1,25 +1,37 @@
 # survey-gate-final
 
-Survey-gated download page for the PHYS23 practice final, plus a time-locked solutions page.
+Survey-gated download page for the PHYS23 practice final, with a separately shared, time-locked solutions page.
 
-## Pages
+## Student-facing URLs
 
-| URL | Purpose |
-|-----|---------|
-| `index.html` | Complete the Google Form survey → download practice final Part 1 |
-| `solutions.html` | Solution keys unlock at a scheduled time |
+| Page | URL | When to share |
+|------|-----|---------------|
+| Survey + practice final | `https://sgjlee0520.github.io/survey-gate-final/` | Anytime |
+| Solution keys | See **INSTRUCTOR.md** | Sunday May 25 at 10:00 AM |
 
-## Setup
+The survey page does **not** link to solutions.
 
-1. **Google Form** — Edit `assets/config.js` and set `formId` to your form ID (the string after `/d/e/` in the form URL).
-2. **PDFs** — Place files in `assets/`:
-   - `practice-final-1.pdf`
-   - `practice-final-1-keys.pdf`
-3. **Solutions unlock time** — Edit `SOLUTIONS_CONFIG.unlockTime` in `assets/config.js`.
+## How solutions are protected
+
+1. **Obscure URL** — solutions live at a non-obvious path, not `/solutions.html`
+2. **Access token** — URL requires a `?k=…` query parameter
+3. **Passphrase** — students enter a code shared on Canvas
+4. **Scheduled release** — the keys PDF is **not** on `main` until a GitHub Action publishes it at unlock time
+
+Client-side checks add friction; the scheduled PDF release is what actually enforces the unlock time.
+
+## Instructor setup
+
+See **[INSTRUCTOR.md](INSTRUCTOR.md)** for the exact links, passcodes, and workflow details.
+
+## Configuration
+
+Edit `assets/config.js` for:
+
+- Google Form ID (`SURVEY_GATE_CONFIG.formId`)
+- Solutions unlock time (`SOLUTIONS_CONFIG.unlockTime`)
+- Access token and passphrase (`SOLUTIONS_CONFIG.accessToken`, `passphrase`)
 
 ## GitHub Pages
 
-1. Push this repo to GitHub.
-2. Settings → Pages → Source: **Deploy from branch** → `main` / `/ (root)`.
-3. Share `https://<username>.github.io/survey-gate-final/` for the survey gate.
-4. Share `https://<username>.github.io/survey-gate-final/solutions.html` for solutions.
+Settings → Pages → Deploy from branch → `main` / `/ (root)`.

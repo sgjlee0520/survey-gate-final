@@ -1,0 +1,38 @@
+name: Unlock solution keys
+
+on:
+  schedule:
+    # May 25, 2026 at 10:00 AM Pacific (17:00 UTC during PDT)
+    - cron: "0 17 25 5 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release-keys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Skip if keys already published
+        id: check
+        run: test -f assets/7c4e2a-keys.pdf && echo "exists=true" >> "$GITHUB_OUTPUT" || echo "exists=false" >> "$GITHUB_OUTPUT"
+
+      - name: Publish keys from store branch
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          git fetch origin store-a7k2
+          git checkout origin/store-a7k2 -- practice-final-1-keys.pdf
+          mkdir -p assets
+          mv practice-final-1-keys.pdf assets/7c4e2a-keys.pdf
+
+      - name: Commit and push
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/7c4e2a-keys.pdf
+          git diff --staged --quiet || git commit -m "Release practice final solution keys"
+          git push
