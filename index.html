@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete the Survey to Get Your Practice Final</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Quick Survey</h1>
+    <p>Please complete the short survey below. Once you submit your response, the download link will appear.</p>
+  </header>
+
+  <main>
+    <div class="survey-container">
+      <iframe
+        id="survey-frame"
+        title="Survey"
+        loading="lazy"
+      >Loading survey…</iframe>
+    </div>
+
+    <div class="download-section" id="download-section">
+      <h2>Thank you for completing the survey!</h2>
+      <p>Your practice final is ready. Click below to download.</p>
+      <a class="download-btn" href="assets/practice-final-1.pdf" download>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-7 4h14v-2H5z"/>
+        </svg>
+        Download Practice Final (Part 1)
+      </a>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 &mdash; PHYS23 Practice Final</footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/gate.js"></script>
+</body>
+</html>

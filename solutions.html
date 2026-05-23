@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHYS23 Practice Final Solutions</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>PHYS23 Practice Final Solutions</h1>
+    <p id="header-message">The practice final solution PDF will become available on Sunday, May 25 at 10:00 AM.</p>
+  </header>
+
+  <main>
+    <div class="card" id="locked-card">
+      <h2 id="locked-title">Solutions unlock Sunday at 10:00 AM</h2>
+      <p id="locked-message">Please come back on Sunday, May 25 at 10:00 AM to download the practice final solutions.</p>
+    </div>
+
+    <div class="card hidden" id="downloads-card">
+      <h2>Solutions are ready</h2>
+      <p>Download the practice final Part 1 solution key below.</p>
+      <div class="download-list">
+        <a class="download-btn" href="assets/practice-final-1-keys.pdf" download>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-7 4h14v-2H5z"/>
+          </svg>
+          Download Practice Final Part 1 Keys
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>&copy; 2026 &mdash; PHYS23 Solutions</footer>
+
+  <script src="assets/config.js"></script>
+  <script>
+    (function () {
+      var label = window.SOLUTIONS_CONFIG.unlockLabel;
+      document.getElementById("header-message").textContent =
+        "The practice final solution PDF will become available on " + label + ".";
+      document.getElementById("locked-title").textContent =
+        "Solutions unlock " + label;
+      document.getElementById("locked-message").textContent =
+        "Please come back on " + label + " to download the practice final solutions.";
+    })();
+  </script>
+  <script src="assets/timelock.js"></script>
+</body>
+</html>
