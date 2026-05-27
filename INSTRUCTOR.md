@@ -12,7 +12,7 @@ https://sgjlee0520.github.io/survey-gate-final/
 
 Students complete the survey and download the practice final Part 1.
 
-### Sunday, May 25 at 10:00 AM — solution keys
+### Available now — solution keys
 
 Post on Canvas:
 
