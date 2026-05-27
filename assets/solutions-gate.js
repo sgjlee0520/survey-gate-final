@@ -63,9 +63,9 @@
       if (!isUnlocked()) {
         show(lockedCard);
         return;
-      } else {
-        show(waitingCard);
       }
+
+      show(waitingCard);
     });
   }
 
