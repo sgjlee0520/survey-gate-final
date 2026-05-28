@@ -30,7 +30,7 @@ Students open the link and download the keys once they are published.
 |-------|---------|
 | Obscure path `r/7c4e2a.html` | Not guessable like `/solutions` |
 | URL token `?k=phys23-may25` | Wrong/missing token → “Page not found” |
-| GitHub Action schedule | Adds `assets/7c4e2a-keys.pdf` to `main` at unlock time |
+| GitHub Action schedule | Adds `practice-final-1-keys.pdf` to `main` at unlock time |
 
 Before the scheduled release, even someone with the full URL cannot download the PDF — the file is not on the site.
 
