@@ -9,8 +9,8 @@ window.SOLUTIONS_CONFIG = {
   // Required query param: ?k=<accessToken>
   accessToken: "phys23-may25",
 
-  // Obscure PDF path — file is added to main by GitHub Actions at unlock time
-  pdfPath: "assets/7c4e2a-keys.pdf",
+  // Published PDF path — file is added to main by GitHub Actions at unlock time
+  pdfPath: "practice-final-1-keys.pdf",
   pdfLabel: "Download Practice Final Part 1 Keys",
 
   // Month is 0-indexed: 4 = May

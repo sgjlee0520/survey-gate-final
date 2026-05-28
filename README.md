@@ -7,7 +7,7 @@ Survey-gated download page for the PHYS23 practice final, with a separately shar
 | Page | URL | When to share |
 |------|-----|---------------|
 | Survey + practice final | `https://sgjlee0520.github.io/survey-gate-final/` | Anytime |
-| Solution keys | See **INSTRUCTOR.md** | Sunday May 25 at 10:00 AM |
+| Solution keys | See **INSTRUCTOR.md** | Available now |
 
 The survey page does **not** link to solutions.
 

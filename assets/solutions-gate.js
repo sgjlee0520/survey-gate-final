@@ -10,6 +10,7 @@
   var waitingCard = document.getElementById("waiting-card");
   var downloadsCard = document.getElementById("downloads-card");
   var downloadLink = document.getElementById("download-link");
+  var headerMessage = document.getElementById("header-message");
 
   downloadLink.href = config.pdfPath;
 
@@ -50,17 +51,21 @@
       return;
     }
 
-    if (!isUnlocked()) {
-      show(lockedCard);
-      return;
-    }
-
     checkPdfAvailable(function (available) {
       if (available) {
         show(downloadsCard);
-      } else {
-        show(waitingCard);
+        if (headerMessage) {
+          headerMessage.textContent = "Solution keys are available now.";
+        }
+        return;
       }
+
+      if (!isUnlocked()) {
+        show(lockedCard);
+        return;
+      }
+
+      show(waitingCard);
     });
   }
 
