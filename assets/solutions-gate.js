@@ -11,7 +11,8 @@
   var downloadsCard = document.getElementById("downloads-card");
   var downloadLink = document.getElementById("download-link");
 
-  downloadLink.href = config.pdfPath;
+  var pdfUrl = new URL(config.pdfPath, window.location.href).href;
+  downloadLink.href = pdfUrl;
 
   var downloadLabel = document.getElementById("download-label");
   if (downloadLabel) {
@@ -35,7 +36,7 @@
   }
 
   function checkPdfAvailable(callback) {
-    fetch(config.pdfPath, { method: "HEAD", cache: "no-store" })
+    fetch(pdfUrl, { method: "HEAD", cache: "no-store" })
       .then(function (response) {
         callback(response.ok);
       })
